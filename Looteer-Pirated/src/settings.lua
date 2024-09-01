@@ -18,7 +18,7 @@ local settings = {
    rare_elixirs = false,
    advanced_elixirs = false,
    sigils = false,
-   gold_items = false,
+   event_items = true,
    legendary_amulet_ga_count = false,
    unique_amulet_ga_count = false,
    draw_wanted_items = false
@@ -49,7 +49,7 @@ function Settings.update()
       advanced_elixirs = gui.elements.item_types.advanced_elixir_items_toggle:get(),
       sigils = gui.elements.item_types.sigil_items_toggle:get(),
       cinders = gui.elements.item_types.cinders_toggle:get(),
-      gold_items = gui.elements.item_types.gold_items_toggle:get(),
+      event_items = gui.elements.item_types.event_items_toggle:get(),
 
 
       -- Debug

@@ -25,7 +25,7 @@ gui.elements = {
 
    item_types = {
       tree = tree_node:new(1),
-      gold_items_toggle = checkbox:new(false, get_hash(plugin_label .. "_gold_items_toggle")),
+      event_items_toggle = checkbox:new(false, get_hash(plugin_label .. "_event_items_toggle")),
       quest_items_toggle = checkbox:new(false, get_hash(plugin_label .. "_quest_items_toggle")),
       crafting_items_toggle = checkbox:new(false, get_hash(plugin_label .. "_crafting_items_toggle")),
       boss_items_toggle = checkbox:new(false, get_hash(plugin_label .. "_boss_items_toggle")),
@@ -88,7 +88,7 @@ function gui:render()
       gui.elements.item_types.advanced_elixir_items_toggle:render("Advanced Elixirs",
          "Do you wanna pickup Advanced Elixirs II?")
       gui.elements.item_types.sigil_items_toggle:render("Sigils", "Do you want to loot dungeon sigils?")
-      gui.elements.item_types.gold_items_toggle:render("Event", "Do you want to pickup Treasure Bags items?")     
+      gui.elements.item_types.event_items_toggle:render("Event", "Do you want to pickup Treasure Bags?")     
       gui.elements.item_types.cinders_toggle:render("Cinders", "Do you want to pickup Cinders?")
       gui.elements.item_types.tree:pop()
    end

@@ -1,6 +1,8 @@
 local custom_items = {
-    gold_items = {
+
+    event_items = {
         [1930727] = "Treasure Bag",
+        [1930725] = "Treasure Bag",
         [1931272] = "Greater Treasure Bag",
     },
 

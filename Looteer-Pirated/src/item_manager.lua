@@ -85,16 +85,16 @@ function ItemManager.check_want_item(item, ignore_distance)
        (settings.crafting_items and ItemManager.check_is_crafting(item)) or
        (settings.rare_elixirs and CustomItems.rare_elixirs[id]) or
        (settings.advanced_elixirs and CustomItems.advanced_elixirs[id]) or
-       (settings.sigils and ItemManager.check_is_sigil(item)) or
        (settings.cinders and ItemManager.check_is_cinders(item)) or
-       (settings.gold_items and CustomItems.gold_items[id])
+       (settings.event_items and CustomItems.event_items[id]) or
+       (settings.sigils and ItemManager.check_is_sigil(item))
 
-   -- Check inventory space
-   local inventory_full = is_special_item and Utils.is_consumable_inventory_full() or Utils.is_inventory_full()
-   if inventory_full then return false end
+       local inventory_full = not (is_event_item or ItemManager.check_is_cinders(item)) and 
+       ((is_special_item and Utils.is_consumable_inventory_full()) or Utils.is_inventory_full())
+       if inventory_full then return false end
 
-   -- If it's a special item, we want it
-   if is_special_item then return true end
+-- If it's a special item, we want it
+if is_special_item then return true end
 
    -- Check rarity
    if rarity < settings.rarity then return false end
